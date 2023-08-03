@@ -37,7 +37,7 @@ class Menu {
                     Name = UserInputHandler.GetStringInput("Enter task name: "),
                     Description = UserInputHandler.GetStringInput("Enter desc: "),
                     Category = UserInputHandler.AcceptCategories(),
-                    Completed = UserInputHandler.GetIntInput("0 if task complete 1 if not completed: ") == 0 ? false : true,
+                    Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
                 };
 
                 //TODO: update the task using index in Task Manager
