@@ -10,7 +10,7 @@ class Menu {
 
             System.Console.WriteLine("1. Add Task");
             System.Console.WriteLine("2. Update Task");
-            System.Console.WriteLine("3. Delete Task");
+            System.Console.WriteLine("3. View Tasks");
             System.Console.WriteLine("0. Exit");
             System.Console.WriteLine();
 
@@ -25,7 +25,7 @@ class Menu {
                     Name = UserInputHandler.GetStringInput("Enter task name: "),
                     Description = UserInputHandler.GetStringInput("Enter desc: "),
                     Category = UserInputHandler.AcceptCategories(),
-                    Completed = UserInputHandler.GetIntInput("0 if task complete 1 if not completed: ") == 0 ? false : true,
+                    Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
                 };
 
                 // System.Console.WriteLine($"here: {NewTask}");
@@ -44,7 +44,7 @@ class Menu {
             }
             else if (choice == 3) {
                 // delete task
-                //TODO: delete task using index from Task Manager
+                //TODO: view all tasks using index from Task Manager
             }
             else {
                 // incorrect
