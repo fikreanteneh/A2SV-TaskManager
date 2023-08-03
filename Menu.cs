@@ -7,10 +7,10 @@ class Menu {
             System.Console.WriteLine("Task Manager");
             System.Console.WriteLine("-----------------");
             System.Console.WriteLine();
-
             System.Console.WriteLine("1. Add Task");
             System.Console.WriteLine("2. Update Task");
             System.Console.WriteLine("3. View Tasks");
+            System.Console.WriteLine("4. Filter Tasks");
             System.Console.WriteLine("0. Exit");
             System.Console.WriteLine();
 
@@ -20,36 +20,60 @@ class Menu {
                 break;
 
             else if (choice == 1) {
-                // add task
                 Task NewTask = new Task {
                     Name = UserInputHandler.GetStringInput("Enter task name: "),
                     Description = UserInputHandler.GetStringInput("Enter desc: "),
                     Category = UserInputHandler.AcceptCategories(),
-                    // Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
                 };
-                
                 taskManager.AddTask(NewTask);
             }
             else if (choice == 2) {
                 taskManager.DisplayTasks();
-                int selected = UserInputHandler.GetIntInput("Which Task do you wanna edit insert a the correct Task num: ");
                 int length = taskManager.GetTaskLength();
-                while (0 > selected || selected >= length){
-                    selected = UserInputHandler.GetIntInput("Please insert the correct Task num:");
-                }
+                int selected;
+                do{
+                    Console.Write("Insert the corrct id for updation: ");
+                } while ( 
+                    int.TryParse(Console.ReadLine(), out selected) &&
+                    selected < 0 || selected >= length);
                 Task selectedTask = taskManager.GetTaskById(selected);
-                string name = UserInputHandler.GetCustomStringInput(": ", selectedTask.Name);
-                string description = UserInputHandler.GetCustomStringInput("Edit desc: ",selectedTask.Description);
-                    // Category = UserInputHandler.AcceptCategories(),
-                    // Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
-                }
+                string name = UserInputHandler.GetStringInput($"Enter new name or leave empty: old >> {selectedTask.Name}\n");
+                string description = UserInputHandler.GetStringInput($"Enter new desccriptiom or leavet empty: old >> {selectedTask.Description}\n");
+                bool completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0
+                    ? false
+                    : true;
 
-                //TODO: update the task using index in Task Manager
+                description = description.Length > 0 ? description: selectedTask.Description;
+                name = name.Length > 0 ? name: selectedTask.Name;
+                taskManager.UpdateTask(selected, name, description, selectedTask.Category,completed);
+            }
             else if (choice == 3) {
                 taskManager.DisplayTasks();
             }
+            else if (choice == 4){
+                int selected;
+                do{
+                    Console.Write("Insert 0 to filter by task completion or 1 by category: ");
+                } while ( 
+                    !int.TryParse(Console.ReadLine(), out selected) ||
+                 selected < 0 || selected > 1  );
+
+                if (selected == 0){
+                    do{
+                        Console.Write("Insert 0 for incomplete 1 for complete: ");
+                    } while ( 
+                        !int.TryParse(Console.ReadLine(), out selected) ||
+                        selected < 0 || selected > 1);
+
+                    taskManager.FilterTaskByCompleted(selected == 0 ? false : true );
+                }
+                else{
+                    Categories cat = UserInputHandler.AcceptCategories();
+                    taskManager.FilterTaskByCategory(cat);
+                }
+                
+            }
             else {
-                // incorrect
                 System.Console.WriteLine("Incorrect choice!!");
             }
         }

@@ -15,8 +15,8 @@ class Task {
     public void UpdateTask(string name, string description, Categories category, bool completed) {
         Name = name;
         Description = description;
-        Category = Category;
-        Completed = Completed;
+        Category = category;
+        Completed = completed;
     }
     public void DisplayTasks(int index){
         Console.ForegroundColor = ConsoleColor.Blue;

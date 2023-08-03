@@ -8,9 +8,9 @@ class TaskManager {
     protected List<Task> Tasks = new List<Task>();
 
     public TaskManager() {
-        List<string> task = FileManager.LineReader().Result;
-        for (int i = 1; i < task.Count; i++){
-            this.AddTask(FileLineToTaskConverter(task[i]));
+        string[] task = FileManager.LineReader().Result;
+        for (int i = 1; i < task.Length; i++){
+            Tasks.Add(FileLineToTaskConverter(task[i]));
         }
 
         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -31,7 +31,7 @@ class TaskManager {
         string name = task[0];
         Categories categories;
         Enum.TryParse<Categories>(task[1], out categories);
-        bool completed = task[2] == "FALSE" ? false: true;
+        bool completed = task[2].ToLower() == "false" ? false: true;
         String description = task[3];
 
         return new Task{
@@ -71,8 +71,8 @@ class TaskManager {
         }
     }
     
-    public List<Task> FilterTaskByCategory(List<Categories> aCategory) {
-        List<Task> filteredTask = Tasks.FindAll(task => aCategory.Contains(task.Category));
+    public List<Task> FilterTaskByCategory(Categories aCategory) {
+        List<Task> filteredTask = Tasks.FindAll(task => aCategory == task.Category);
         for (int i = 0; i < filteredTask.Count; i++) {
             filteredTask[i].DisplayTasks(i);
         }

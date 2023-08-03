@@ -8,11 +8,6 @@ class FileManager {
     private static string filePath = Path.Combine(Directory.GetCurrentDirectory(), "task.csv");
     public static async Task<bool> LineAppender(string newData) {
         try{
-            // string[] oldLines = await File.ReadAllLinesAsync(filePath);
-            // List<string> lines = new List<string>(oldLines); 
-            // lines.Add(newData);
-            // await File.WriteAllLinesAsync(filePath, lines);
-            // Console.WriteLine("Data appended to CSV line successfully.");
             File.AppendAllText(filePath, newData + Environment.NewLine);
             return true;
         }
@@ -28,12 +23,14 @@ class FileManager {
         return false;
     }
     
-    public static async Task<List<string>> LineReader() {
+    public static async Task<string[]> LineReader() {
         try{
-            List<string> lines = new List<string>(await File.ReadAllLinesAsync(filePath));
+            // List<string> lines = new List<string>(await File.ReadAllLinesAsync(filePath));
+            string[] lines = File.ReadAllLines(filePath);
             return lines;
         }catch(Exception ex){
-            return new List<string>() ;
+            string[] s = {};
+            return s;
         }
     }
     
@@ -50,7 +47,6 @@ class FileManager {
             }
 
             await File.WriteAllLinesAsync(filePath, lines);
-            Console.WriteLine("Data appended to CSV line successfully.");
             return true;
         }
         catch(FileNotFoundException ex){

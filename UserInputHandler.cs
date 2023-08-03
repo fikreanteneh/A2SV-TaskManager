@@ -51,7 +51,6 @@ public class UserInputHandler
         {
             string key = day.ToString();
             int value = (int)day;
-
             // Console.WriteLine($"Key: {key}, Value: {value}");
             System.Console.WriteLine($"{value}. {key}");
         }
