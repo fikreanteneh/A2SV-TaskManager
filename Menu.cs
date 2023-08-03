@@ -1,7 +1,7 @@
 class Menu {
     public static void Main() {
         int choice = 1;
-
+        TaskManager taskManager = new TaskManager();
         while (choice != 0) {
             System.Console.WriteLine("-----------------");
             System.Console.WriteLine("Task Manager");
@@ -25,26 +25,28 @@ class Menu {
                     Name = UserInputHandler.GetStringInput("Enter task name: "),
                     Description = UserInputHandler.GetStringInput("Enter desc: "),
                     Category = UserInputHandler.AcceptCategories(),
-                    Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
+                    // Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
                 };
-
-                // System.Console.WriteLine($"here: {NewTask}");
-                // TODO: add the new task to the Task Manager
+                
+                taskManager.AddTask(NewTask);
             }
             else if (choice == 2) {
-                // update task
-                Task NewTask = new Task {
-                    Name = UserInputHandler.GetStringInput("Enter task name: "),
-                    Description = UserInputHandler.GetStringInput("Enter desc: "),
-                    Category = UserInputHandler.AcceptCategories(),
-                    Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
-                };
+                taskManager.DisplayTasks();
+                int selected = UserInputHandler.GetIntInput("Which Task do you wanna edit insert a the correct Task num: ");
+                int length = taskManager.GetTaskLength();
+                while (0 > selected || selected >= length){
+                    selected = UserInputHandler.GetIntInput("Please insert the correct Task num:");
+                }
+                Task selectedTask = taskManager.GetTaskById(selected);
+                string name = UserInputHandler.GetCustomStringInput(": ", selectedTask.Name);
+                string description = UserInputHandler.GetCustomStringInput("Edit desc: ",selectedTask.Description);
+                    // Category = UserInputHandler.AcceptCategories(),
+                    // Completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0 ? false : true,
+                }
 
                 //TODO: update the task using index in Task Manager
-            }
             else if (choice == 3) {
-                // delete task
-                //TODO: view all tasks using index from Task Manager
+                taskManager.DisplayTasks();
             }
             else {
                 // incorrect

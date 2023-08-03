@@ -16,7 +16,12 @@ public class UserInputHandler
         Console.Write(message);
         return Console.ReadLine();
     }
-
+    public static string GetCustomStringInput(string message, string old)
+    {
+        Console.WriteLine(message);
+        Console.Write(old);
+        return Console.ReadLine();
+    }
     public static int GetIntInput(string message = "")
     {
         System.Console.Write(message);

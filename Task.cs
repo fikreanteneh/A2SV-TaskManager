@@ -1,17 +1,22 @@
 class Task {
     internal string Name { get; set; }
-    internal bool Completed { get; set; }
+    internal bool Completed{ get; set; } = false;
     internal string Description { get; set; }
     internal Categories Category { get; set; }
 
     public override string ToString() {
-        return $"Name: {Name}\nDescription: {Description}\nCategory: {Category}\nCompleted: {Completed}";
+        return $"{Name},{Category},{Completed},{Description}";
     }
-    public void UpdateTask(string name, string description, Categories Category, bool Completed) {
-        this.Name = name;
-        this.Description = description;
-        this.Category = Category;
-        this.Completed = Completed;
+    
+    public string ToWrite(){
+        return $"{Name},{Category},{Completed},{Description}";
+    }
+    
+    public void UpdateTask(string name, string description, Categories category, bool completed) {
+        Name = name;
+        Description = description;
+        Category = Category;
+        Completed = Completed;
     }
     public void DisplayTasks(int index){
         Console.ForegroundColor = ConsoleColor.Blue;
@@ -30,4 +35,5 @@ class Task {
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine($"\t{Description}");
     }
+    
 }

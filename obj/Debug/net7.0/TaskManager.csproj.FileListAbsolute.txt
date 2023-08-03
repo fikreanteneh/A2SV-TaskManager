@@ -1,0 +1,15 @@
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\bin\Debug\net7.0\TaskManager.exe
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\bin\Debug\net7.0\TaskManager.deps.json
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\bin\Debug\net7.0\TaskManager.runtimeconfig.json
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\bin\Debug\net7.0\TaskManager.dll
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\bin\Debug\net7.0\TaskManager.pdb
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.csproj.AssemblyReference.cache
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.AssemblyInfoInputs.cache
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.AssemblyInfo.cs
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.csproj.CoreCompileInputs.cache
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.dll
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\refint\TaskManager.dll
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.pdb
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\TaskManager.genruntimeconfig.cache
+C:\Users\fikre\OneDrive\Desktop\A2SV-TaskManager\obj\Debug\net7.0\ref\TaskManager.dll
