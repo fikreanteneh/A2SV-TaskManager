@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fikre\\OneDrive\\Desktop\\TaskManager\\TaskManager.csproj",
+      "projectUniqueName": "C:\\Users\\fikre\\OneDrive\\Desktop\\A2SV-TaskManager\\TaskManager.csproj",
       "projectName": "TaskManager",
-      "projectPath": "C:\\Users\\fikre\\OneDrive\\Desktop\\TaskManager\\TaskManager.csproj",
+      "projectPath": "C:\\Users\\fikre\\OneDrive\\Desktop\\A2SV-TaskManager\\TaskManager.csproj",
       "packagesPath": "C:\\Users\\fikre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fikre\\OneDrive\\Desktop\\TaskManager\\obj\\",
+      "outputPath": "C:\\Users\\fikre\\OneDrive\\Desktop\\A2SV-TaskManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fikre\\AppData\\Roaming\\NuGet\\NuGet.Config",
