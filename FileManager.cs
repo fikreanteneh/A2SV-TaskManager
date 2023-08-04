@@ -6,26 +6,30 @@ using System.Threading.Tasks;
 class FileManager {
     
     private static string filePath = Path.Combine(Directory.GetCurrentDirectory(), "task.csv");
-    public static async Task<bool> LineAppender(string newData) {
+    public static async Task<bool> LineAppender(string newData){
+        string message;
         try{
             File.AppendAllText(filePath, newData + Environment.NewLine);
             return true;
         }
         catch(FileNotFoundException ex){
-            Console.WriteLine("The File task.csv is Not Found");
+            message = "The File task.csv is Not Found";
         }
         catch(IOException ex){
-            Console.WriteLine($"Something Went Wrong while writing. Check your disk!");
+           message = $"Something Went Wrong while writing. Check your disk!";
         }
         catch(Exception ex){
-            Console.WriteLine("Something Went wrong");
+            message =  "Something Went wrong";
         }
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"\n{message}\n");
+        Console.ForegroundColor = ConsoleColor.White;
         return false;
     }
     
     public static async Task<string[]> LineReader() {
         try{
-            // List<string> lines = new List<string>(await File.ReadAllLinesAsync(filePath));
             string[] lines = File.ReadAllLines(filePath);
             return lines;
         }catch(Exception ex){
@@ -36,6 +40,7 @@ class FileManager {
     
     
     public static async Task<bool> LineChanger(int lineNumber, string newData) {
+        string message;
         try{
             string[] lines = await File.ReadAllLinesAsync(filePath);
             if (lineNumber >= 0 && lineNumber < lines.Length){
@@ -50,14 +55,17 @@ class FileManager {
             return true;
         }
         catch(FileNotFoundException ex){
-            Console.WriteLine("The File task.csv is Not Found");
+            message = "The File task.csv is Not Found";
         }
         catch(IOException ex){
-            Console.WriteLine($"Something Wetr Wrong while writing. Check your disk space");
+            message = $"Something Went Wrong while writing. Check your disk!";
         }
         catch(Exception ex){
-            Console.WriteLine("Something Went wrong. Check If your are editing the correct Line");
+            message =  "Something Went wrong";
         }
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"\n{message}\n");
+        Console.ForegroundColor = ConsoleColor.White;
         return false;
         
     }

@@ -31,9 +31,9 @@ class Task {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"\tInCompleted");
         }
-
-        Console.ForegroundColor = ConsoleColor.White;
+        Console.ForegroundColor = ConsoleColor.DarkMagenta;
         Console.WriteLine($"\t{Description}");
+        Console.ForegroundColor = ConsoleColor.White;
     }
     
 }
