@@ -83,6 +83,8 @@ class TaskManager {
     //This filters the task by completion and prints and return the data
     public List<Task> FilterTaskByCategory(Categories aCategory) {
         List<Task> filteredTask = Tasks.FindAll(task => aCategory == task.Category);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"You have {filteredTask.Count} tasks in this category.");
         for (int i = 0; i < filteredTask.Count; i++) {
             filteredTask[i].DisplayTasks(i);
         }
@@ -91,7 +93,10 @@ class TaskManager {
     
     //This filters by category
     public List<Task> FilterTaskByCompleted(bool aCompleted) {
+        
         List<Task> filteredTask = Tasks.FindAll(task => task.Completed == aCompleted);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"You have {filteredTask.Count} tasks in this category.");
         for (int i = 0; i < filteredTask.Count; i++) {
             filteredTask[i].DisplayTasks(i);
         }

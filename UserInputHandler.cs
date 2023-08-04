@@ -11,55 +11,42 @@ public class UserInputHandler
 
         return UserInputs;
     }
-    public static string GetStringInput(string message)
-    {
-        Console.Write(message);
-        return Console.ReadLine();
+    public static string GetStringInput(string message, int length = 0){
+        string input = "";
+        do{
+            Console.Write($"\n{message}");
+            input = Console.ReadLine();
+        } while (
+            input.Length < length
+            );
+        return input;
     }
-    public static string GetCustomStringInput(string message, string old)
+    
+    public static int GetIntInput(string message = "", int mini = 0, int maxi = 1)
     {
-        Console.WriteLine(message);
-        Console.Write(old);
-        return Console.ReadLine();
-    }
-    public static int GetIntInput(string message = "")
-    {
-        System.Console.Write(message);
-        string IntVal = Console.ReadLine();
         int ConvertedInt;
+        do{
+            Console.Write($"\n{message}");
+        } while (
+            !int.TryParse(Console.ReadLine(), out ConvertedInt) ||
+            ConvertedInt < mini ||
+            ConvertedInt > maxi
+            );
 
-        try
-        {
-            ConvertedInt = int.Parse(IntVal);
-
-            return ConvertedInt;
-        }
-        catch (FormatException f)
-        {
-            System.Console.WriteLine("Provided value is NOT a number");
-        }
-
-        return 0;
+        return ConvertedInt;
     }
 
     internal static Categories AcceptCategories()
     {
         Categories[] enumValues = (Categories[])Enum.GetValues(typeof(Categories));
 
-        System.Console.WriteLine("Choose categories");
+        System.Console.WriteLine("\nChoose categories");
         foreach (Categories day in enumValues)
         {
             string key = day.ToString();
             int value = (int)day;
-            // Console.WriteLine($"Key: {key}, Value: {value}");
             System.Console.WriteLine($"{value}. {key}");
         }
-
-        // foreach (string type in enumDictionary)
-        // {
-        //     System.Console.WriteLine($"{enumDictionary[type]}. {type}");
-        // }
-
-        return (Categories)GetIntInput("Choice: ");
+        return (Categories)GetIntInput("Choice: ", 0, 6);
     }
 }
