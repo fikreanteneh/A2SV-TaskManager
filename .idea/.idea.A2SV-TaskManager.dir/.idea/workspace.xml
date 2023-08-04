@@ -8,16 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11b96498-f6c9-4119-9cd0-076ced0fd8e0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A2SV-TaskManager.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A2SV-TaskManager.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaskManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UserInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/TaskManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/TaskManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/TaskManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/TaskManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/TaskManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/TaskManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/TaskManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/TaskManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/TaskManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/TaskManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/TaskManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/TaskManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +74,7 @@
       <workItem from="1691059386404" duration="7445000" />
       <workItem from="1691068854882" duration="13940000" />
       <workItem from="1691089865437" duration="5423000" />
-      <workItem from="1691124671530" duration="2879000" />
+      <workItem from="1691124671530" duration="3146000" />
     </task>
     <servers />
   </component>
