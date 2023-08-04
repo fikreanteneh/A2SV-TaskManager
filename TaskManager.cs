@@ -70,7 +70,11 @@ class TaskManager {
     public void UpdateTask(int aIndex, string aName, string aDescription, Categories aCategory, bool aCompleted) {
         Task task = Tasks[aIndex];
         task.UpdateTask(aName, aDescription, aCategory, aCompleted);
-        FileManager.LineChanger(aIndex + 1, task.ToWrite());
+        string[] updated = new string[Tasks.Count];
+        for(int i = 0; i < Tasks.Count; i++){
+            updated[i] = Tasks[i].ToWrite();
+        }
+        FileManager.LineChanger(aIndex + 1, updated);
     }
     
     //This prints the each task in ordered manner

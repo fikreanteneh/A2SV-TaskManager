@@ -39,19 +39,10 @@ class FileManager {
     }
     
     
-    public static async Task<bool> LineChanger(int lineNumber, string newData) {
+    public static async Task<bool> LineChanger(int lineNumber, string[] newData) {
         string message;
         try{
-            string[] lines = await File.ReadAllLinesAsync(filePath);
-            if (lineNumber >= 0 && lineNumber < lines.Length){
-                lines[lineNumber] = newData;
-            }
-            else{
-                Console.WriteLine("Invalid line number.");
-                return false;
-            }
-
-            await File.WriteAllLinesAsync(filePath, lines);
+            await File.WriteAllLinesAsync(filePath, newData);
             return true;
         }
         catch(FileNotFoundException ex){

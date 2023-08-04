@@ -34,8 +34,11 @@ class Program
                 int length = taskManager.GetTaskLength();
                 int selected = UserInputHandler.GetIntInput("Insert the corrct id for updation: ", 0, length - 1);
                 Task selectedTask = taskManager.GetTaskById(selected);
+
                 string name = UserInputHandler.GetStringInput($"Enter new name or leave empty: old >> {selectedTask.Name}\n", 0);
+
                 string description = UserInputHandler.GetStringInput($"Enter new desccriptiom or leavet empty: old >> {selectedTask.Description}\n", 0);
+                
                 bool completed = UserInputHandler.GetIntInput("1 if task complete 0 if not completed: ") == 0
                     ? false
                     : true;
